@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import useLocalStorage from 'use-local-storage'
+import Navbar from './components/navbar'
+import './App.css'
 
 function App() {
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches // checks if the user's browser is in dark mode
+  const [theme, setTheme] = useLocalStorage(
+    'theme',
+    defaultDark ? 'dark' : 'light'
+  ) // similar to State except local storage
+
+  const changeTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light' // if theme is light, change to dark, vise versa
+    console.log('theme changed')
+    setTheme(newTheme)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" data-theme={theme}>
+      <Navbar changeTheme={changeTheme} />
+      <button onClick={changeTheme}>switch theme app</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
