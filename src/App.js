@@ -18,7 +18,6 @@ function App() {
   return (
     <div className="App" data-theme={theme}>
       <Navbar changeTheme={changeTheme} />
-      <button onClick={changeTheme}>switch theme app</button>
     </div>
   )
 }
