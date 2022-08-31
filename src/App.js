@@ -1,6 +1,9 @@
 import useLocalStorage from 'use-local-storage'
 import Navbar from './components/navbar'
+import Home from './components/Home'
+import Aboutme from './components/Aboutme'
 import './App.css'
+import { Route } from 'react-router-dom'
 
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches // checks if the user's browser is in dark mode
@@ -18,6 +21,8 @@ function App() {
   return (
     <div className="App" data-theme={theme}>
       <Navbar changeTheme={changeTheme} />
+      <Route path="/" element={<Home />} />
+      <Route path="/about-me" element={<Aboutme />} />
     </div>
   )
 }
