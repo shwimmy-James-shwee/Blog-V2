@@ -1,0 +1,29 @@
+.arrow-top {
+  width: 10px;
+  height: 30px;
+  background-color: var(--text-primary);
+  position: absolute;
+}
+
+.arrow-top.left {
+  transform: rotate(45deg);
+}
+.arrow-top.right {
+transform: rotate(135deg);
+}
+
+.arrow-bottom {
+  width: 10px;
+  height: 30px;
+  background-color: var(--text-primary);
+  position: absolute;
+  margin-top: 28px;
+}
+
+.arrow-bottom.left {
+  transform: rotate(135deg);
+}
+
+.arrow-bottom.right {
+  transform: rotate(45deg);
+}

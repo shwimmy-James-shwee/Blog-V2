@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import './navbar.css'
+import './componentStyles/navbar.css'
 
 function Navbar({ changeTheme }) {
   return (

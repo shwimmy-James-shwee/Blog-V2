@@ -21,8 +21,12 @@ function App() {
   return (
     <div className="App" data-theme={theme}>
       <Navbar changeTheme={changeTheme} />
-      <Route path="/" element={<Home />} />
-      <Route path="/about-me" element={<Aboutme />} />
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/about-me">
+        <Aboutme />
+      </Route>
     </div>
   )
 }

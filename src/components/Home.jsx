@@ -1,3 +1,11 @@
+import './componentStyles/Home.css'
+import Carousel from './Carousel '
+
 export default function Home() {
-  return
+  return (
+    <>
+      <Carousel />
+      <div></div>
+    </>
+  )
 }

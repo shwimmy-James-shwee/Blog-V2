@@ -23,6 +23,7 @@ code {
 [data-theme='dark'] {
   --background: #18191a;
   --background-secondary: #242526;
+  --border-secondary: ;
   --text-primary: white;
   --text-secondary: grey;
   --accent: darkred;
