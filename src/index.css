@@ -14,17 +14,23 @@ code {
 
 :root {
   --background: rgb(241, 241, 241);
+  --background-hover: rgba(205, 205, 205, .5);
   --background-secondary: rgb(233, 233, 233);
-  --text-primary: black;
+  --background-secondary-hover: rgba(197, 197, 197, 0.5);
+  --text-primary: rgb(0, 0, 0);
+  --text-primary-hover: rgba(0, 0, 0, .5);
   --text-secondary: royalblue;
   --accent: purple;
 }
 
 [data-theme='dark'] {
-  --background: #18191a;
-  --background-secondary: #242526;
+  --background: rgb(24, 25, 26);
+  --background-hover: rgba(24, 25, 26, .5);
+  --background-secondary: rgb(36, 37, 38);
+  --background-secondary-hover: rgba(36, 37, 38, .5);
   --border-secondary: ;
-  --text-primary: white;
+  --text-primary: rgb(255, 255, 255);
+  --text-primary-hover: rgba(255, 255, 255, .5);
   --text-secondary: grey;
   --accent: darkred;
 }

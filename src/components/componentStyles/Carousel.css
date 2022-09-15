@@ -7,11 +7,13 @@
   justify-content: center;
 }
 
-.Carousel-body {
+.Carousel-body-container {
   height: 100%;
   width: 100%;
   background-color: var(--background-secondary);
   flex: 1000%;
+  overflow: hidden;
+
 }
 
 .button-wrapper {
@@ -21,15 +23,31 @@
   display: flex; /* applied flex again as the new wrappers children didnt inherit the property */
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
-/* .arrow {
-  width: 10%;
-  height: 10%;
-  margin: 0px;
-  background: red;
-} */
+.button-wrapper:hover {
+  background-color: var(--background-secondary-hover);
+}
 
-.right {
-  transform: rotate(180deg);
+.Carousel-body {
+  --carousel-index: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  transform: translateX(calc(var(--carousel-index) * -100%));
+  transition: transform 250ms ease-in-out;
+}
+
+.Carousel-Item {
+  min-width: 19%;
+  max-width: 19%;
+  /* width: 20%; */
+  height: 90%;
+  margin-right: .49rem;
+  margin-left: .49rem;
+  background: red;
 }
