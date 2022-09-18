@@ -47,8 +47,8 @@ const carouselItems = [
     },
   },
   {
-    id: 4,
-    name: 'test carousel item 4',
+    id: 5,
+    name: 'test carousel item 5',
     datePublished: '01/01/2021',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
@@ -58,8 +58,8 @@ const carouselItems = [
     },
   },
   {
-    id: 4,
-    name: 'test carousel item 4',
+    id: 6,
+    name: 'test carousel item 6',
     datePublished: '01/01/2021',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
@@ -69,8 +69,8 @@ const carouselItems = [
     },
   },
   {
-    id: 4,
-    name: 'test carousel item 4',
+    id: 7,
+    name: 'test carousel item 7',
     datePublished: '01/01/2021',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
@@ -80,8 +80,8 @@ const carouselItems = [
     },
   },
   {
-    id: 4,
-    name: 'test carousel item 4',
+    id: 8,
+    name: 'test carousel item 8',
     datePublished: '01/01/2021',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
@@ -91,8 +91,8 @@ const carouselItems = [
     },
   },
   {
-    id: 4,
-    name: 'test carousel item 4',
+    id: 9,
+    name: 'test carousel item 9',
     datePublished: '01/01/2021',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
@@ -114,12 +114,35 @@ export default function Carousel() {
       getComputedStyle(carousel).getPropertyValue('--carousel-index')
     )
 
+    const displayedItemBlocks = Math.ceil(carousel.children.length / 5) // # of sets of items to be displayed when cycling
+
     if (direction === 'left') {
-      carousel.style.setProperty('--carousel-index', carouselIndex - 1)
+      if (carouselIndex === 0) {
+        carousel.style.setProperty('--carousel-index', displayedItemBlocks - 1) // display last block
+      } else {
+        carousel.style.setProperty('--carousel-index', carouselIndex - 1) // increase or decrease css variable, multiply variable by the in an x axis transition
+      }
     } else if (direction === 'right') {
-      carousel.style.setProperty('--carousel-index', carouselIndex + 1)
+      if (carouselIndex + 1 >= displayedItemBlocks) {
+        carousel.style.setProperty('--carousel-index', 0) // display first block
+      } else {
+        carousel.style.setProperty('--carousel-index', carouselIndex + 1)
+      }
     }
   }
+
+  let bufferedPostsList = [...carouselItems]
+  // if length / ammount displayed per block is not whole number
+  //if (!Number.isInteger(carouselItems.length / 5)) {
+  const additionalRequiredPosts =
+    Math.ceil(carouselItems.length / 5) * 5 - carouselItems.length
+  console.log('additonal posts needed: ', additionalRequiredPosts)
+  for (let x = 1; x <= additionalRequiredPosts; x++) {
+    bufferedPostsList.push(carouselItems[x - 1])
+    console.log('inside loop: ', x)
+  }
+  console.log(bufferedPostsList)
+  //}
 
   return (
     <div className="Carousel-wrapper">
@@ -128,7 +151,7 @@ export default function Carousel() {
       </div>
       <div className="Carousel-body-container">
         <div className="Carousel-body" id="Carousel-body">
-          {carouselItems.map((post) => (
+          {bufferedPostsList.map((post) => (
             <Post key={post.id.toString()} post={post} />
           ))}
         </div>
