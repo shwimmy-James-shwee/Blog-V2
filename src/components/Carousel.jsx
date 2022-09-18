@@ -1,5 +1,6 @@
 import Arrow from './Arrow'
 import './componentStyles/Carousel.css'
+import CarouselPostCard from './CarouselPostCard.jsx'
 
 const carouselItems = [
   {
@@ -75,8 +76,8 @@ const carouselItems = [
     blurb:
       'this is a test of displaying a short description for carousel item 4',
     tags: {
-      new: true,
-      depricated: true,
+      new: false,
+      depricated: false,
     },
   },
   {
@@ -87,7 +88,7 @@ const carouselItems = [
       'this is a test of displaying a short description for carousel item 4',
     tags: {
       new: true,
-      depricated: true,
+      depricated: false,
     },
   },
   {
@@ -98,14 +99,10 @@ const carouselItems = [
       'this is a test of displaying a short description for carousel item 4',
     tags: {
       new: true,
-      depricated: true,
+      depricated: false,
     },
   },
 ]
-
-function Post({ post }) {
-  return <div className="Carousel-Item"> {post.name} </div>
-}
 
 export default function Carousel() {
   function handleClick(direction) {
@@ -131,18 +128,13 @@ export default function Carousel() {
     }
   }
 
+  // add duplicate posts to carousel item array so no gaps are present
   let bufferedPostsList = [...carouselItems]
-  // if length / ammount displayed per block is not whole number
-  //if (!Number.isInteger(carouselItems.length / 5)) {
   const additionalRequiredPosts =
     Math.ceil(carouselItems.length / 5) * 5 - carouselItems.length
-  console.log('additonal posts needed: ', additionalRequiredPosts)
   for (let x = 1; x <= additionalRequiredPosts; x++) {
     bufferedPostsList.push(carouselItems[x - 1])
-    console.log('inside loop: ', x)
   }
-  console.log(bufferedPostsList)
-  //}
 
   return (
     <div className="Carousel-wrapper">
@@ -152,7 +144,7 @@ export default function Carousel() {
       <div className="Carousel-body-container">
         <div className="Carousel-body" id="Carousel-body">
           {bufferedPostsList.map((post) => (
-            <Post key={post.id.toString()} post={post} />
+            <CarouselPostCard key={post.id} post={post} />
           ))}
         </div>
       </div>

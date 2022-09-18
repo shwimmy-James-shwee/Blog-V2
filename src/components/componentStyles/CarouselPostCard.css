@@ -1,0 +1,46 @@
+.Carousel-Item {
+  min-width: 19%;
+  max-width: 19%;
+  /* width: 20%; */
+  height: 90%;
+  margin-right: .49rem;
+  margin-left: .49rem;
+  background: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Carousel-Card-Header {
+  padding: 2px;
+  border: 1px solid; 
+  display: flex;
+  justify-content: space-between;
+}
+.Carousel-Card-Date {
+  font-size: small;
+}
+
+.Carousel-Card-Title {
+  font-size: medium;
+}
+
+.Carousel-Card-Blurb {
+  font-size: small;
+}
+
+.Carousel-Card-Footer {
+
+}
+
+.Carousel-Card-Tag {
+
+}
+
+.Carousel-Card-Tag .new {
+  
+}
+
+.Carousel-Card-Tag .depricated {
+  
+}

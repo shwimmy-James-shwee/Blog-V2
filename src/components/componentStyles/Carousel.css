@@ -42,12 +42,4 @@
   transition: transform 250ms ease-in-out;
 }
 
-.Carousel-Item {
-  min-width: 19%;
-  max-width: 19%;
-  /* width: 20%; */
-  height: 90%;
-  margin-right: .49rem;
-  margin-left: .49rem;
-  background: red;
-}
+
