@@ -8,7 +8,7 @@ function Navbar({ changeTheme }) {
         <div className="nav-header">
           <NavLink to="/" className="nav-header">
             <header>James' Blog</header>
-          </NavLink>{' '}
+          </NavLink>
         </div>
         <div className="nav-items">
           <NavLink to="about-me" className="nav-button">
@@ -19,9 +19,9 @@ function Navbar({ changeTheme }) {
           </NavLink>
         </div>
         <div>
-          <button className="nav-theme" onClick={changeTheme}>
+          <label className="nav-theme" onClick={changeTheme}>
             Switch theme
-          </button>
+          </label>
         </div>
       </div>
     </div>

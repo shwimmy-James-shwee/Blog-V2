@@ -27,7 +27,6 @@
   color: var(--text-primary);
   background-color: var(--background-secondary);
   border: none;
-  /* transition: all .5s; */
 }
 
 .nav-button {
@@ -35,7 +34,19 @@
   background-color: var(--background-secondary);
   border: none;
   text-decoration: none;
-  /* transition: all .5s; */
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.nav-button:hover {
+  color: var(--text-primary-hover);
+}
+
+.nav-items {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
 }
 
 
