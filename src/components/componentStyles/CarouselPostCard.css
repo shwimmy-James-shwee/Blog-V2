@@ -1,46 +1,80 @@
 .Carousel-Item {
-  min-width: 19%;
-  max-width: 19%;
-  /* width: 20%; */
-  height: 90%;
-  margin-right: .49rem;
-  margin-left: .49rem;
-  background: red;
+  min-width: 18%;
+  max-width: 18%; /* need to refactor how width is determined to be responsive */
+  height: 80%;
+  margin: .49rem;
+  /* margin-left: .49rem; */
+  background: var(--background-contrast);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 8px;
+  border-radius: 5px;
+  color: black;
+}
+
+.Carousel-Item:hover {
+background: var(--background-contrast-hover);
 }
 
 .Carousel-Card-Header {
-  padding: 2px;
-  border: 1px solid; 
+  width: 100%;
+  border-bottom: 2px solid var(--border-type-color); 
   display: flex;
   justify-content: space-between;
 }
+
+[post-type='Blog-EQ'] {
+  --border-type-color: green;
+}
+
+[post-type='Blog-Technical'] {
+  --border-type-color: orange;
+}
+
+[post-type='Mini-Project'] {
+  --border-type-color: red;
+}
+
 .Carousel-Card-Date {
   font-size: small;
 }
 
 .Carousel-Card-Title {
   font-size: medium;
+
+  word-break: break-word;
+
 }
 
 .Carousel-Card-Blurb {
   font-size: small;
+  overflow: hidden;
 }
 
 .Carousel-Card-Footer {
-
+  display: flex;
+  justify-content: flex-end;
 }
 
 .Carousel-Card-Tag {
-
+  height: 15px;
+  font-size: x-small;
+  margin-left: 5px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 15px; 
+  border-radius: 45%;
+  font-weight: 750;
 }
 
-.Carousel-Card-Tag .new {
-  
+.Carousel-Card-Tag.new {
+  width: 30px;
+  background: green;
 }
 
-.Carousel-Card-Tag .depricated {
-  
+.Carousel-Card-Tag.depricated {
+  width: 63px;
+  background: red;
 }
+

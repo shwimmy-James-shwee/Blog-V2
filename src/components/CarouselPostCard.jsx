@@ -1,8 +1,10 @@
 import './componentStyles/CarouselPostCard.css'
 
 export default function CarouselPostCard({ post }) {
+  const postType = post.postType
+
   return (
-    <div className="Carousel-Item">
+    <div className="Carousel-Item" post-type={postType}>
       <div className="Carousel-Card-Header">
         <div className="Carousel-Card-Title">{post.name} </div>
         <div className="Carousel-Card-Date">{post.datePublished}</div>

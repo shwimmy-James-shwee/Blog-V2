@@ -15,8 +15,14 @@ code {
 :root {
   --background: rgb(241, 241, 241);
   --background-hover: rgba(205, 205, 205, .5);
+
   --background-secondary: rgb(233, 233, 233);
   --background-secondary-hover: rgba(197, 197, 197, 0.5);
+
+  --background-contrast: rgb(280, 280, 280);
+  --background-contrast-hover: rgb(248, 248, 248);
+  --text-contrast: rgb(240, 240, 240);
+
   --text-primary: rgb(0, 0, 0);
   --text-primary-hover: rgba(0, 0, 0, .5);
   --text-secondary: royalblue;
@@ -26,9 +32,14 @@ code {
 [data-theme='dark'] {
   --background: rgb(24, 25, 26);
   --background-hover: rgba(24, 25, 26, .5);
+
   --background-secondary: rgb(36, 37, 38);
   --background-secondary-hover: rgba(36, 37, 38, .5);
-  --border-secondary: ;
+
+  --background-contrast: rgb(194, 194, 194);
+  --background-contrast-hover: rgb(210, 210, 210);
+  --text-contrast: rgb(0, 0, 0);
+
   --text-primary: rgb(255, 255, 255);
   --text-primary-hover: rgba(255, 255, 255, .5);
   --text-secondary: grey;
