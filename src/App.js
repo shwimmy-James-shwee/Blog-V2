@@ -19,8 +19,8 @@ function App() {
   }
 
   return (
-    <div className="App" data-theme={theme}>
-      <Navbar changeTheme={changeTheme} />
+    <div className="App" dataTheme={theme}>
+      <Navbar changeTheme={changeTheme} dataTheme={theme} />
       <Route exact path="/">
         <Home />
       </Route>

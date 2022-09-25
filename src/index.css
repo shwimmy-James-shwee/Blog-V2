@@ -29,7 +29,7 @@ code {
   --accent: purple;
 }
 
-[data-theme='dark'] {
+[dataTheme='dark'] {
   --background: rgb(24, 25, 26);
   --background-hover: rgba(24, 25, 26, .5);
 
