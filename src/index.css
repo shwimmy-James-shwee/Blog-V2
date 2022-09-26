@@ -23,6 +23,10 @@ code {
   --background-contrast-hover: rgb(248, 248, 248);
   --text-contrast: rgb(240, 240, 240);
 
+  --button-primary: rgb(73, 73, 73);
+  --button-primary-hover: rgba(73, 73, 73, .5);
+  --button-primary-selected: rgb(65, 65, 65);
+
   --text-primary: rgb(0, 0, 0);
   --text-primary-hover: rgba(0, 0, 0, .5);
   --text-secondary: royalblue;
@@ -39,6 +43,10 @@ code {
   --background-contrast: rgb(194, 194, 194);
   --background-contrast-hover: rgb(210, 210, 210);
   --text-contrast: rgb(0, 0, 0);
+
+  --button-primary: rgb(194, 194, 194);
+  --button-primary-hover: rgba(194, 194, 194, .5);
+  --button-primary-selected: rgb(65, 65, 65);
 
   --text-primary: rgb(255, 255, 255);
   --text-primary-hover: rgba(255, 255, 255, .5);
