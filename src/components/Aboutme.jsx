@@ -5,7 +5,7 @@ import AboutCV from './Aboutme-cv'
 import { useState } from 'react'
 
 export default function Aboutme() {
-  const [aboutPage, setAboutPage] = useState('me')
+  const [aboutPage, setAboutPage] = useState('aboutMeButton')
 
   function displayContent(page, event) {
     setAboutPage(page)
@@ -27,20 +27,27 @@ export default function Aboutme() {
   return (
     <div className="aboutMeWrapper">
       <div className="aboutMeNav">
-        <span id="aboutMeButton" onClick={(e) => displayContent('me', e)}>
+        <span
+          className="aboutMeSelected"
+          id="aboutMeButton"
+          onClick={(e) => displayContent('aboutMeButton', e)}
+        >
           About Me
         </span>
-        <span id="aboutBlogButton" onClick={(e) => displayContent('blog', e)}>
+        <span
+          id="aboutBlogButton"
+          onClick={(e) => displayContent('aboutBlogButton', e)}
+        >
           About This Blog
         </span>
-        <span id="cvButton" onClick={(e) => displayContent('cv', e)}>
+        <span id="cvButton" onClick={(e) => displayContent('cvButton', e)}>
           My CV
         </span>
       </div>
       <div className="aboutMeContent">
-        {aboutPage === 'me' && <AboutJames />}
-        {aboutPage === 'blog' && <AboutBlog />}
-        {aboutPage === 'cv' && <AboutCV />}
+        {aboutPage === 'aboutMeButton' && <AboutJames />}
+        {aboutPage === 'aboutBlogButton' && <AboutBlog />}
+        {aboutPage === 'cvButton' && <AboutCV />}
       </div>
     </div>
   )

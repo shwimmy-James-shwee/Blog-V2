@@ -1,0 +1,18 @@
+.about-me-gridbox {
+  display: flex;
+  /* grid-template-columns: 2fr 1fr; */
+  padding: 5%;
+  /* margin-top: 3%; */
+  gap: 2em;
+}
+
+/* .about-me-insidegrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+} */
+
+.small-image {
+  padding-top: 50px;
+  width: 300px;
+  height: auto;
+}

@@ -14,7 +14,6 @@ function App() {
 
   const changeTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light' // if theme is light, change to dark, vise versa
-    console.log('theme changed')
     setTheme(newTheme)
   }
 

@@ -4,7 +4,8 @@
   font-size: large;
   font-weight: bold;
   /* padding: 20px; */
-  height: 100vh;
+  min-height: 100vh;
+  
   /* transition: all .5s; */
 }
 
