@@ -1,37 +1,32 @@
 import './componentStyles/Aboutme.css'
+import AboutJames from './Aboutme-me'
+import AboutBlog from './Aboutme-blog'
+import AboutCV from './Aboutme-cv'
+import { useState } from 'react'
 
 export default function Aboutme() {
-  let displayedPage = ''
+  const [aboutPage, setAboutPage] = useState('me')
+
   function displayContent(page, event) {
-    //need to find better way to dynamically change select button colour
-    if (page === 'me') {
-      displayedPage = 'me'
-      document.getElementById('aboutBlogButton').style.backgroundColor =
-        'var(--button-primary)'
-      document.getElementById('cvButton').style.backgroundColor =
-        'var(--button-primary)'
-    } else if (page === 'blog') {
-      displayedPage = 'blog'
-      document.getElementById('aboutMeButton').style.backgroundColor =
-        'var(--button-primary)'
-      document.getElementById('cvButton').style.backgroundColor =
-        'var(--button-primary)'
-    } else if (page === 'cv') {
-      displayedPage = 'cv'
-      document.getElementById('aboutMeButton').style.backgroundColor =
-        'var(--button-primary)'
-      document.getElementById('aboutBlogButton').style.backgroundColor =
-        'var(--button-primary)'
-    }
-    // document.getElementById('aboutMeNav').children.style.backgroundColor =
-    //   'var(--button-primary)'
-    event.target.style.backgroundColor = 'var(--button-primary-selected)'
-    console.log(displayedPage)
+    setAboutPage(page)
+
+    // const buttons = document.getElementById('aboutMeNav') //couldn't resolve, substitued with below until later review
+    // buttons.forEach((button) => {
+    //   button.classList.remove('aboutMeSelected')
+    // })
+
+    document
+      .getElementById('aboutBlogButton')
+      .classList.remove('aboutMeSelected')
+    document.getElementById('aboutMeButton').classList.remove('aboutMeSelected')
+    document.getElementById('cvButton').classList.remove('aboutMeSelected')
+
+    event.target.classList.add('aboutMeSelected')
   }
 
   return (
     <div className="aboutMeWrapper">
-      <div className="aboutMeNav" selected={displayedPage}>
+      <div className="aboutMeNav">
         <span id="aboutMeButton" onClick={(e) => displayContent('me', e)}>
           About Me
         </span>
@@ -42,7 +37,11 @@ export default function Aboutme() {
           My CV
         </span>
       </div>
-      <div className="aboutMeContent"></div>
+      <div className="aboutMeContent">
+        {aboutPage === 'me' && <AboutJames />}
+        {aboutPage === 'blog' && <AboutBlog />}
+        {aboutPage === 'cv' && <AboutCV />}
+      </div>
     </div>
   )
 }

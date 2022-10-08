@@ -29,8 +29,8 @@
   background: var(--button-primary-hover);
 }
 
-.aboutMeNav span[selected = 'me'] {
-  border: 2px solid red;
+.aboutMeSelected {
+  background-color: var(--button-primary-hover) !important;
 }
 
 .aboutMeContent {
