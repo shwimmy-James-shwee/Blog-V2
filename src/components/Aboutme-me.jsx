@@ -3,15 +3,15 @@ const jamesPhoto = require('../Images/james-photo-india.jpg')
 
 export default function AboutJames() {
   const dateString = '07/21/1998'
-  const birthday = +new Date(dateString)
+  const birthday = new Date(dateString)
   const age = Math.floor((Date.now() - birthday) / 3.15576e10) // this number is a year in milliseconds (365.25 * 24 * 60 * 60 * 1000)
 
   return (
-    <div class="about-me-gridbox">
+    <div class="about-me-wrapper">
       <div>
         <h2>About Me</h2>
         <p>
-          Hey! I'm James, a {age} year old up tech consultant working at KPMG
+          Hey! I'm James, a {age} year old tech consultant working at KPMG
           Auckland and an aspiring web developer.
         </p>
         <p>
@@ -30,17 +30,18 @@ export default function AboutJames() {
           undertook Enspiral Dev Acadamy's course in web development to upskill
           and get my foot in the door. Initially I planned to use these web
           development skills to support my knowledge in information systems,
-          however as i worked through the course I realised I wanted the exact
-          opposite, to focus on web development and to supliment that journey
-          with the knowledge gained from my information systems degree.
+          however as i worked through the course, and through my career so far,
+          I've realised I want the exact opposite; to focus on web development
+          and to supliment that journey with the knowledge gained from my
+          information systems degree.
         </p>
 
         <p>
           Outside of web development and work I have two main interests which
-          take up most of my personal time. One of those is enjoying a massively
-          wide variety of music, including at times attempting to make it my own
-          through being an amateur disc jockey. The other interest being
-          engrosed and sinking time into various video games.
+          take up most of my personal time. One is enjoying a massively wide
+          variety of music, including at times attempting to make it my own
+          through being an amateur disc jockey, the other being engrossing
+          myself and sinking time into various video games.
         </p>
       </div>
       <div>
