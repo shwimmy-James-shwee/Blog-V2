@@ -17,19 +17,20 @@
   font-size: medium;
 }
 
-.aboutMeNav span {
+.aboutMeNav a {
   padding: 10px;
   border-radius: 10px;
   background: var(--button-primary);
   color: var(--text-contrast);
   cursor: pointer;
+  text-decoration: none;
 }
 
-.aboutMeNav span:hover {
+.aboutMeNav a:hover {
   background: var(--button-primary-hover);
 }
 
-.aboutMeSelected {
+.aboutSelected {
   background-color: var(--button-primary-hover) !important;
 }
 

@@ -11,7 +11,7 @@ function Navbar({ changeTheme, dataTheme }) {
           </NavLink>
         </div>
         <div className="nav-items">
-          <NavLink to="about" className="nav-button">
+          <NavLink to="/about/me" className="nav-button">
             About
           </NavLink>
           <NavLink to="/test" className="nav-button">
