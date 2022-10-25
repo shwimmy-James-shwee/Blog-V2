@@ -7,7 +7,7 @@ const carouselItems = [
     id: 1,
     name: 'test carousel item 1',
     datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
+    postType: 'Technical',
     blurb:
       'this is a test of displaying a short description for carousel item 1',
     tags: {
@@ -19,7 +19,7 @@ const carouselItems = [
     id: 2,
     name: 'test carousel item 2',
     datePublished: '01/01/2011',
-    postType: 'Blog-EQ',
+    postType: 'Emotional',
     blurb:
       'this is a test of displaying a short description for carousel item 2',
     tags: {
@@ -43,7 +43,7 @@ const carouselItems = [
     id: 4,
     name: 'test carousel item 4',
     datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
+    postType: 'Technical',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
     tags: {
@@ -55,7 +55,7 @@ const carouselItems = [
     id: 5,
     name: 'test carousel item 5',
     datePublished: '01/01/2021',
-    postType: 'Blog-EQ',
+    postType: 'Emotional',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
     tags: {
@@ -79,7 +79,7 @@ const carouselItems = [
     id: 7,
     name: 'test carousel item 7',
     datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
+    postType: 'Technical',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
     tags: {
@@ -91,7 +91,7 @@ const carouselItems = [
     id: 8,
     name: 'test carousel item 8',
     datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
+    postType: 'Technical',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
     tags: {

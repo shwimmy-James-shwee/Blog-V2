@@ -24,11 +24,11 @@ background: var(--background-contrast-hover);
   justify-content: space-between;
 }
 
-[post-type='Blog-EQ'] {
+[post-type='Emotional'] {
   --border-type-color: green;
 }
 
-[post-type='Blog-Technical'] {
+[post-type='Technical'] {
   --border-type-color: orange;
 }
 

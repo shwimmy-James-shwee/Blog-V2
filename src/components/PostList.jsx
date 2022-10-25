@@ -10,7 +10,7 @@ const postsTemp = [
     id: 1,
     name: 'test carousel item 1',
     datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
+    postType: 'Technical',
     blurb:
       'this is a test of displaying a short description for carousel item 1',
     tags: {
@@ -22,7 +22,7 @@ const postsTemp = [
     id: 2,
     name: 'test carousel item 2',
     datePublished: '01/01/2011',
-    postType: 'Blog-EQ',
+    postType: 'Emotional',
     blurb:
       'this is a test of displaying a short description for carousel item 2',
     tags: {
@@ -46,7 +46,7 @@ const postsTemp = [
     id: 4,
     name: 'test carousel item 4',
     datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
+    postType: 'Technical',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
     tags: {
@@ -58,7 +58,7 @@ const postsTemp = [
     id: 5,
     name: 'test carousel item 5',
     datePublished: '01/01/2021',
-    postType: 'Blog-EQ',
+    postType: 'Emotional',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
     tags: {
@@ -82,7 +82,7 @@ const postsTemp = [
     id: 7,
     name: 'test carousel item 7',
     datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
+    postType: 'Technical',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
     tags: {
@@ -94,115 +94,7 @@ const postsTemp = [
     id: 8,
     name: 'test carousel item 8',
     datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
-    blurb:
-      'this is a test of displaying a short description for carousel item 4',
-    tags: {
-      new: true,
-      depricated: false,
-    },
-  },
-  {
-    id: 9,
-    name: 'test carousel item 9',
-    datePublished: '01/01/2021',
-    postType: 'Mini-Project',
-    blurb:
-      'this is a test of displaying a short description for carousel item 4',
-    tags: {
-      new: true,
-      depricated: false,
-    },
-  },
-  {
-    id: 1,
-    name: 'test carousel item 1',
-    datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
-    blurb:
-      'this is a test of displaying a short description for carousel item 1',
-    tags: {
-      new: true,
-      depricated: true,
-    },
-  },
-  {
-    id: 2,
-    name: 'test carousel item 2',
-    datePublished: '01/01/2011',
-    postType: 'Blog-EQ',
-    blurb:
-      'this is a test of displaying a short description for carousel item 2',
-    tags: {
-      new: true,
-      depricated: true,
-    },
-  },
-  {
-    id: 3,
-    name: 'test carousel item ',
-    datePublished: '01/01/2020',
-    postType: 'Mini-Project',
-    blurb:
-      'this is a test of displaying a short description for carousel item 3',
-    tags: {
-      new: true,
-      depricated: true,
-    },
-  },
-  {
-    id: 4,
-    name: 'test carousel item 4',
-    datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
-    blurb:
-      'this is a test of displaying a short description for carousel item 4',
-    tags: {
-      new: true,
-      depricated: true,
-    },
-  },
-  {
-    id: 5,
-    name: 'test carousel item 5',
-    datePublished: '01/01/2021',
-    postType: 'Blog-EQ',
-    blurb:
-      'this is a test of displaying a short description for carousel item 4',
-    tags: {
-      new: true,
-      depricated: true,
-    },
-  },
-  {
-    id: 6,
-    name: 'test carousel item 6',
-    datePublished: '01/01/2021',
-    postType: 'Mini-Project',
-    blurb:
-      'this is a test of displaying a short description for carousel item 4',
-    tags: {
-      new: true,
-      depricated: true,
-    },
-  },
-  {
-    id: 7,
-    name: 'test carousel item 7',
-    datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
-    blurb:
-      'this is a test of displaying a short description for carousel item 4',
-    tags: {
-      new: false,
-      depricated: false,
-    },
-  },
-  {
-    id: 8,
-    name: 'test carousel item 8',
-    datePublished: '01/01/2021',
-    postType: 'Blog-Technical',
+    postType: 'Technical',
     blurb:
       'this is a test of displaying a short description for carousel item 4',
     tags: {
@@ -225,7 +117,7 @@ const postsTemp = [
 ]
 
 export default function PostList() {
-  const { posts, setPosts } = useState(postsTemp)
+  const [posts, setPosts] = useState(postsTemp) //store posts in state for filtering
 
   const [open, setOpen] = useState({
     //track whether drop downs are open or closed
@@ -266,12 +158,68 @@ export default function PostList() {
   }
 
   const clearSelection = () => {
-    setSelection({ postTypeSelection: '', postTagSelection: '' })
+    setSelection({
+      postTypeSelection: '',
+      postTagSelection: '',
+      searchQuery: '',
+    })
     setOpen({
       postTypeOpen: false,
       postTagOpen: false,
     })
+    document.getElementById('searchQuery').setAttribute('value', '') // DOESNT WORK - need to remove text box when filter cleared
   }
+
+  const filteredPosts = posts.filter((post) => {
+    const name = post.name.toLowerCase() // THROWS ERRORS
+    const blurb = post.blurb.toLowerCase()
+    const id = post.id.toString()
+    const date = post.datePublished
+    const postType = post.postType
+    const postNew = post.tags.new
+    const postDepricated = post.tags.depricated
+
+    const queryStr = selection.searchQuery.toLowerCase()
+    const typeFilter = selection.postTypeSelection
+    const tagFilter = selection.postTagSelection
+
+    let strCond = false
+    if (queryStr === '') {
+      strCond = true
+    } else if (
+      name.includes(queryStr) ||
+      blurb.includes(queryStr) ||
+      id.includes(queryStr) ||
+      date.includes(queryStr)
+    ) {
+      strCond = true
+    } else {
+      strCond = false
+    }
+
+    let typeCond = false
+    if (typeFilter === '') {
+      typeCond = true
+    } else if (postType === typeFilter) {
+      typeCond = true
+    } else {
+      typeCond = false
+    }
+
+    let tagCond = false
+    if (tagFilter === '') {
+      tagCond = true
+    } else if (
+      (postNew === true && tagFilter === 'New') ||
+      (postDepricated === true && tagFilter === 'Depricated')
+    ) {
+      tagCond = true
+    } else {
+      tagCond = false
+    }
+
+    return tagCond && typeCond && strCond ? true : false
+  })
 
   return (
     <div className="listWrapper">
@@ -315,7 +263,7 @@ export default function PostList() {
           <button onClick={clearSelection}>Clear Filter</button>
         </div>
         <div className="listContent">
-          {postsTemp.map((post, index) => {
+          {filteredPosts.map((post, index) => {
             return (
               <div className="postRow" key={index} post-type={post.postType}>
                 <span className="postRowID">{post.id}</span>

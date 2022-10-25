@@ -13,6 +13,10 @@
   cursor: pointer;
 }
 
+.dropdown > button:hover {
+  background-color: var(--background-secondary-hover)
+}
+
 .menu {
   position: absolute;
 

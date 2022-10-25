@@ -68,9 +68,9 @@
 
 
 .listContent {
-display: Flex;
-flex-direction: column;
-overflow-y:scroll
+  display: Flex;
+  flex-direction: column;
+  overflow-y:scroll
 }
 
 
@@ -105,11 +105,11 @@ overflow-y:scroll
   border-radius: 100%;
 }
 
-[post-type='Blog-EQ'] {
+[post-type='Emotional'] {
   --border-type-color: rgba(0, 128, 0, .3);
 }
 
-[post-type='Blog-Technical'] {
+[post-type='Technical'] {
   --border-type-color: rgba(255, 165, 0, .3);
 }
 
