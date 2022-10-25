@@ -50,7 +50,6 @@ export default function Aboutme() {
           My CV
         </Link>
       </div>
-      {console.log(id)}
       <div className="aboutMeContent">
         {id === 'me' && <AboutJames />}
         {id === 'blog' && <AboutBlog />}

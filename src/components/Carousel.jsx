@@ -152,8 +152,8 @@ export default function Carousel() {
       </div>
       <div className="Carousel-body-container">
         <div className="Carousel-body" id="Carousel-body">
-          {bufferedPostsList.map((post) => (
-            <CarouselPostCard key={post.id} post={post} />
+          {bufferedPostsList.map((post, index) => (
+            <CarouselPostCard key={index} post={post} />
           ))}
         </div>
       </div>

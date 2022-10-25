@@ -13,26 +13,106 @@
   height: 90%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
   background-color: var(--background-secondary);
  }
 
 .listHeader {
-width: 100%;
-height: 60px;
-background-color: red;
+  width: 100%;
+  height: 60px;
+
 }
 .listHeader h2 {
-  margin: 0;
+  margin-left: 5px;
 }
 
 .listFilter {
-  width: 100%;
-  height: 60px;
-  background-color: blue;
+  width: calc(100% - 10px);
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.listContent {
+.listFilter > button {
+  width: 95px;
+  height: 30px;
+  border: 1px solid var(--button-primary);
+  border-radius: 45px;
+  background-color: var(--button-primary);
+  color: var(--text-contrast);
+  cursor: pointer;
+}
 
+.listFilter > button:hover {
+  background-color: var(--button-primary-hover);
+  border: 1px solid var(--button-primary-hover);
+}
+
+
+.FilterSelector {
+  min-width: 400px;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.FilterSelector > input {
+  width: 125px;
+  height: 25px;
+  color: var(--text-primary);
+  background-color: var(--background-secondary);
+  border: 1px solid var(--button-primary);
+  border-radius: 45px;
+}
+
+
+.listContent {
+display: Flex;
+flex-direction: column;
+overflow-y:scroll
+}
+
+
+.postRow {
+  height: 50px;
+  width: 100%;
+  /* background-color: red; */
+  display: inline-grid;
+  grid-template-columns: 1fr 3fr 8fr 1fr;
+  /* justify-content: space-between; */
+}
+.postRow:hover {
+  background-color: var(--background-secondary-hover);
+  cursor: pointer;
+}
+
+.postRow > h4 {
+  margin-top: 13px;
+}
+
+.postRow > p {
+  font-size: small;
+}
+
+.postRowID {
+  text-align: center;
+  width: 30px;
+  height: 25px;
+  align-self: center;
+  justify-self: center;
+  background-color: var(--border-type-color);
+  border-radius: 100%;
+}
+
+[post-type='Blog-EQ'] {
+  --border-type-color: rgba(0, 128, 0, .3);
+}
+
+[post-type='Blog-Technical'] {
+  --border-type-color: rgba(255, 165, 0, .3);
+}
+
+[post-type='Mini-Project'] {
+  --border-type-color: rgba(255, 0, 0, .3);
 }

@@ -7,7 +7,7 @@ export default function AboutJames() {
   const age = Math.floor((Date.now() - birthday) / 3.15576e10) // this number is a year in milliseconds (365.25 * 24 * 60 * 60 * 1000)
 
   return (
-    <div class="about-me-wrapper">
+    <div className="about-me-wrapper">
       <div>
         <h2>About Me</h2>
         <p>
@@ -46,7 +46,7 @@ export default function AboutJames() {
       </div>
       <div>
         <img
-          class="small-image"
+          className="small-image"
           // src="https://shwimmy-james-shwee.github.io/images/james-photo-india.jpg"
           src={jamesPhoto}
           alt="James' head shot"

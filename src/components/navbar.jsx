@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import './componentStyles/navbar.css'
 
-function Navbar({ changeTheme, dataTheme }) {
+function Navbar({ changeTheme, datatheme }) {
   return (
     <div className="nav">
       <div className="nav-wrapper">
@@ -20,13 +20,13 @@ function Navbar({ changeTheme, dataTheme }) {
         </div>
         <div>
           <label className="nav-theme">
-            <i class="moon">🌜</i>
-            <i class="sun">🌞</i>
+            <i className="moon">🌜</i>
+            <i className="sun">🌞</i>
 
-            {dataTheme === 'dark' && (
+            {datatheme === 'dark' && (
               <input type="checkbox" onClick={changeTheme} checked></input>
             )}
-            {dataTheme === 'light' && (
+            {datatheme === 'light' && (
               <input type="checkbox" onClick={changeTheme} />
             )}
 

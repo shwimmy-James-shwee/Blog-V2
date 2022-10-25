@@ -12,6 +12,27 @@ code {
     monospace;
 }
 
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--button-primary-hover);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--button-primary);
+}
+
+
 :root {
   --background: rgb(241, 241, 241);
   --background-hover: rgba(205, 205, 205, .5);
@@ -33,7 +54,7 @@ code {
   --accent: purple;
 }
 
-[dataTheme='dark'] {
+[datatheme='dark'] {
   --background: rgb(24, 25, 26);
   --background-hover: rgba(24, 25, 26, .5);
 
