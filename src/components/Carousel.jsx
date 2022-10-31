@@ -117,7 +117,7 @@ export default function Carousel() {
   function handleClick(direction) {
     const carousel = document.getElementById('Carousel-body') //find the carousel in the DOM
     const carouselIndex = parseInt(
-      getComputedStyle(carousel).getPropertyValue('--carousel-index')
+      getComputedStyle(carousel).getPropertyValue('--carousel-index') //retrieve CSS variable
     )
 
     const displayedItemBlocks = Math.ceil(carousel.children.length / 5) // # of sets of items to be displayed when cycling

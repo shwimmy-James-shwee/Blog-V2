@@ -1,10 +1,16 @@
 import './componentStyles/CarouselPostCard.css'
+import { NavLink } from 'react-router-dom'
 
 export default function CarouselPostCard({ post }) {
   const postType = post.postType
 
   return (
-    <div className="Carousel-Item" post-type={postType}>
+    <NavLink
+      to={`/post/${post.id}`}
+      className="Carousel-Item"
+      post-type={postType}
+    >
+      {/* <div className="Carousel-Item" post-type={postType}> */}
       <div className="Carousel-Card-Header">
         <div className="Carousel-Card-Title">{post.name} </div>
         <div className="Carousel-Card-Date">{post.datePublished}</div>
@@ -20,6 +26,7 @@ export default function CarouselPostCard({ post }) {
           <div className="Carousel-Card-Tag depricated">Depricated</div>
         )}
       </div>
-    </div>
+      {/* </div> */}
+    </NavLink>
   )
 }

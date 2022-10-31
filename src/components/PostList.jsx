@@ -1,6 +1,7 @@
 import './componentStyles/PostList.css'
 import DropDown from './DropDown'
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const postTypeOptions = ['Technical', 'Emotional', 'Mini-Project']
 const postTagOptions = ['New', 'Depricated']
@@ -167,7 +168,7 @@ export default function PostList() {
       postTypeOpen: false,
       postTagOpen: false,
     })
-    document.getElementById('searchQuery').setAttribute('value', '') // DOESNT WORK - need to remove text box when filter cleared
+    document.getElementById('searchQuery').value = ''
   }
 
   const filteredPosts = posts.filter((post) => {
@@ -183,7 +184,7 @@ export default function PostList() {
     const typeFilter = selection.postTypeSelection
     const tagFilter = selection.postTagSelection
 
-    let strCond = false
+    let strCond = false // block evaulates an entered string filter condition
     if (queryStr === '') {
       strCond = true
     } else if (
@@ -197,7 +198,7 @@ export default function PostList() {
       strCond = false
     }
 
-    let typeCond = false
+    let typeCond = false // block evaulates an entered type filter condition
     if (typeFilter === '') {
       typeCond = true
     } else if (postType === typeFilter) {
@@ -206,7 +207,7 @@ export default function PostList() {
       typeCond = false
     }
 
-    let tagCond = false
+    let tagCond = false // block evaulates an entered tag filter condition
     if (tagFilter === '') {
       tagCond = true
     } else if (
@@ -265,12 +266,17 @@ export default function PostList() {
         <div className="listContent">
           {filteredPosts.map((post, index) => {
             return (
-              <div className="postRow" key={index} post-type={post.postType}>
+              <NavLink
+                to={`/post/${post.id}`}
+                className="postRow"
+                key={index}
+                post-type={post.postType}
+              >
                 <span className="postRowID">{post.id}</span>
                 <h4>{post.name}</h4>
                 <p>{post.blurb}</p>
                 <p>{post.datePublished}</p>
-              </div>
+              </NavLink>
             )
           })}
         </div>

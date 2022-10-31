@@ -77,10 +77,10 @@
 .postRow {
   height: 50px;
   width: 100%;
-  /* background-color: red; */
   display: inline-grid;
   grid-template-columns: 1fr 3fr 8fr 1fr;
-  /* justify-content: space-between; */
+  text-decoration: none;
+  color: var(--text-primary);
 }
 .postRow:hover {
   background-color: var(--background-secondary-hover);
