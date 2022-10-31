@@ -4,8 +4,11 @@ import Home from './components/Home'
 import Aboutme from './components/Aboutme'
 import './App.css'
 import { Route } from 'react-router-dom'
+import CreateDB from './Database'
 
 function App() {
+  //CreateDB()
+
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches // checks if the user's browser is in dark mode
   const [theme, setTheme] = useLocalStorage(
     'theme',
