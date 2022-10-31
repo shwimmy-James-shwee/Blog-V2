@@ -264,21 +264,24 @@ export default function PostList() {
           <button onClick={clearSelection}>Clear Filter</button>
         </div>
         <div className="listContent">
-          {filteredPosts.map((post, index) => {
-            return (
-              <NavLink
-                to={`/post/${post.id}`}
-                className="postRow"
-                key={index}
-                post-type={post.postType}
-              >
-                <span className="postRowID">{post.id}</span>
-                <h4>{post.name}</h4>
-                <p>{post.blurb}</p>
-                <p>{post.datePublished}</p>
-              </NavLink>
-            )
-          })}
+          {filteredPosts.length === 0 && <h4>No posts found...</h4>}
+
+          {filteredPosts.length !== 0 &&
+            filteredPosts.map((post, index) => {
+              return (
+                <NavLink
+                  to={`/post/${post.id}`}
+                  className="postRow"
+                  key={index}
+                  post-type={post.postType}
+                >
+                  <span className="postRowID">{post.id}</span>
+                  <h4>{post.name}</h4>
+                  <p>{post.blurb}</p>
+                  <p>{post.datePublished}</p>
+                </NavLink>
+              )
+            })}
         </div>
       </div>
     </div>
