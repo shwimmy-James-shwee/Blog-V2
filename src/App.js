@@ -4,7 +4,6 @@ import Home from './components/Home'
 import Aboutme from './components/Aboutme'
 import './App.css'
 import { Route } from 'react-router-dom'
-import CreateDB from './Database'
 
 function App() {
   //CreateDB()
