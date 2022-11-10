@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom'
 
 export default function CarouselPostCard({ post }) {
   const postType = post.postType
-
+  const urlParm = post.postType === 'Mini-Project' ? 'Mini-Project' : 'post'
   return (
     <NavLink
-      to={`/post/${post.id}`}
+      to={`/${urlParm}/${post.id}`}
       className="Carousel-Item"
       post-type={postType}
     >
