@@ -1,0 +1,52 @@
+.postWrapper {
+  width: 80%;
+  height: auto;
+  /* min-height: 50%; */
+  background-color: var(--background-secondary);
+  margin: auto;
+  margin-top: 30px;
+}
+
+.postTitle {
+  text-align: center;
+}
+
+.postContent {
+
+}
+
+.contentBlock {
+
+}
+
+.textBlock {
+
+}
+
+.textBlock, h3, h4, p {
+  
+}
+
+.imageBlock {
+  
+}
+
+.imageBlock, img {
+  
+}
+
+.imageBlock, p {
+  
+}
+
+.iFrameBlock {
+  
+}
+
+.oListBlock {
+  
+}
+
+.uListBlock {
+  
+}

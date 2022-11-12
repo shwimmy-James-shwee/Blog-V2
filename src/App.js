@@ -2,6 +2,7 @@ import useLocalStorage from 'use-local-storage'
 import Navbar from './components/navbar'
 import Home from './components/Home'
 import Aboutme from './components/Aboutme'
+import Post from './components/Post'
 import './App.css'
 import { Route } from 'react-router-dom'
 
@@ -27,6 +28,9 @@ function App() {
       </Route>
       <Route path="/about/:id">
         <Aboutme />
+      </Route>
+      <Route path="/post/:id">
+        <Post />
       </Route>
     </div>
   )
