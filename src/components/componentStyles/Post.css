@@ -5,14 +5,17 @@
   background-color: var(--background-secondary);
   margin: auto;
   margin-top: 30px;
+  padding-bottom: 20px;
 }
 
 .postTitle {
+  padding-top: 10px;
   text-align: center;
 }
 
 .postContent {
-
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .contentBlock {
@@ -23,8 +26,8 @@
 
 }
 
-.textBlock, h3, h4, p {
-  
+h3, h4 {
+  margin-left: 1%;
 }
 
 .imageBlock {
@@ -39,8 +42,9 @@
   
 }
 
-.iFrameBlock {
-  
+.iFrameBlock, iframe {
+  width: 100%;
+  height: 00px;
 }
 
 .oListBlock {
