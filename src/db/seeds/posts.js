@@ -7,11 +7,11 @@ exports.seed = (knex) =>
       postType: 'Emotional',
       blurb:
         'An informal discussion of some of my current personal characteristics',
-      tags: {
+      tags: JSON.stringify({
         new: false,
         depricated: true,
-      },
-      content: [
+      }),
+      content: JSON.stringify([
         {
           type: 'text',
           heading: 'Introduction',
@@ -98,7 +98,7 @@ exports.seed = (knex) =>
             'Now before I get into organisation as a strength of mine, I would like to give a disclaimer that when I say organisation I’m talking about in my work, not necessarily outside of that. Whether it’s a mild case of undiagnosed OCD or not, I enjoy the aspect of being organised towards my work, it’s something that I wouldn’t say I’m the best at as everyone would conduct their organising differently but the amount of clarity it can bring to me is valuable enough for me to state it as my last strength. Specifically, when working in a group environment where there is potentially a lot going on I gain a lot of satisfaction from sitting down with the team and breaking our task down on a whiteboard (or two). Tying into my value of rationality and logic, separating a task and analysing the different subcomponents of that task, whether through simple brainstorm or something more elaborate, I find brings a lot of clarity to a team and really allows us to be on the same page about our approach. As stated, one limitation to this is that it sadly doesn’t stem out into my personal life very much but for the sake of my work life its invaluable. The only other potential limitation I find with this skill is that the depth of my organisation is much larger when working in a group compared to individually, while it would likely be of great benefit to myself to go as deep when working on my own, I find that the extra level of depth apparent in a group environment stems from the greater need to have everybody in sync with one another.',
           ],
         },
-      ],
+      ]),
     },
     {
       id: 2,
@@ -107,11 +107,11 @@ exports.seed = (knex) =>
       postType: 'Technical',
       blurb:
         'A brief explanation of the differences between display: inline, inline-block, and block',
-      tags: {
+      tags: JSON.stringify({
         new: false,
         depricated: false,
-      },
-      content: [
+      }),
+      content: JSON.stringify([
         {
           type: 'text',
           heading: 'Introduction',
@@ -181,7 +181,7 @@ exports.seed = (knex) =>
           src: 'https://codepen.io/james-pearce-the-scripter/embed/QWdzvGX?height=265&theme-id=dark&default-tab=html%2Cresult&user=james-pearce-the-scripter&slug-hash=QWdzvGX&pen-title=QWdzvGX&name=cp_embed_4',
           annotation: '',
         },
-      ],
+      ]),
     },
     {
       id: 3,
@@ -190,11 +190,11 @@ exports.seed = (knex) =>
       postType: 'Emotional',
       blurb:
         "A brief explanation of Emotional Intelligence (EQ) and it's importance",
-      tags: {
+      tags: JSON.stringify({
         new: false,
         depricated: false,
-      },
-      content: [
+      }),
+      content: JSON.stringify([
         {
           type: 'text',
           heading: 'What Is Emotional Intelligence',
@@ -239,7 +239,7 @@ exports.seed = (knex) =>
             'Emotional intelligence effects your work or school performance through its ability to assist in the navigation of your environment’s social complexities and its ability to enable you to motivate and lead others. EQ effects your physical health due to the ability to manage emotions, and in turn manage your stress, which if left un-managed can lead to serious health implications such as raised blood pressure, supressed immune system etc. similarly to physical health, EQ is also important for your mental health. Its common knowledge how unchecked emotions and stress impact mental health which then make you more vulnerable to mental illnesses such as anxiety and depression. An inability to understand these emotions can also leave you with feelings of loneliness and isolation and further develop any mental health problems if they start to impact your ability to form and maintain relationships. EQ is also important for your relationships through enabling better expression of how you feel and the ability to understand how others are feeling, this goes hand in hand with also allowing for effective communication within those relationships.',
           ],
         },
-      ],
+      ]),
     },
     {
       id: 4,
@@ -247,11 +247,11 @@ exports.seed = (knex) =>
       datePublished: '01/05/2021',
       postType: 'Technical',
       blurb: 'A brief explanation of JavaScript and the DOM',
-      tags: {
+      tags: JSON.stringify({
         new: false,
         depricated: false,
-      },
-      content: [
+      }),
+      content: JSON.stringify([
         {
           type: 'text',
           heading:
@@ -316,7 +316,7 @@ exports.seed = (knex) =>
             'A Function within JavaScript refers to a section of code that has been designed to perform a specific task but is also only executed when it is “called” or activated by another piece of code or an action. Writing the syntax of a function is relatively simple, starting with the word “function” followed by what you want to call that function, such as “Function1”, and then any data that will be passed from where the function is called from into functions code in parentheses immediately afterwards (with the functions code itself following wrapped in curly brackets). This example would read “Function Function1(data1, data2) {the code to be executed}”. The usefulness of functions and their reusability shines from its acceptance of different data from the calling location, for example in the function above if we were to execute the code “data1 + data2” then data1 and data2 could be replaced with any numbers each time the function is called and thus produce a unique result without having to “hard code” those numbers in.',
           ],
         },
-      ],
+      ]),
     },
     {
       id: 5,
@@ -325,11 +325,11 @@ exports.seed = (knex) =>
       postType: 'Emotional',
       blurb:
         "Neuroplasticity's benefits and practice, a summary of Growth Mindset, and how they affect me",
-      tags: {
+      tags: JSON.stringify({
         new: false,
         depricated: false,
-      },
-      content: [
+      }),
+      content: JSON.stringify([
         {
           type: 'text',
           heading: 'Neuroplasticity',
@@ -403,7 +403,7 @@ exports.seed = (knex) =>
             'Beyond the concept of a growth mindset, I think one element of the research for this blog post that will have a notable influence on me is the idea of “not yet” and its application around times I am stuck or facing a block in what I’m doing. At times like this when I may have spent over an hour trying to get a piece of code to work, and more so when this starts to frustrate me, I can reflect on the progress I’ve made and tell myself that while it doesn’t work, it more importantly doesn’t work “yet”. A change in language around how I speak to myself gives a subtle nudge to remind me that my code might not work now, but importantly doesn’t mean it won’t work in the future, especially with all the avenues for support I have around me.',
           ],
         },
-      ],
+      ]),
     },
     {
       id: 6,
@@ -412,11 +412,11 @@ exports.seed = (knex) =>
       postType: 'Emotional',
       blurb:
         'Some of my experiences with problem solving and my confidence in problem solving techniques',
-      tags: {
+      tags: JSON.stringify({
         new: false,
         depricated: true,
-      },
-      content: [
+      }),
+      content: JSON.stringify([
         {
           type: 'text',
           heading: 'One of my experiences with problem solving',
@@ -508,7 +508,7 @@ exports.seed = (knex) =>
             'The majority of my reflections around a process I’ve undertaken don’t relate to a problem-solving process, rather a reflection towards an overall work process regarding work that’s been completed or is to be completed. For example, while learning technical aspects of this course I often realised in retrospect that a specific task has taken longer and been harder than expected, from this reflection I then attempt to adapt how I plan my future daily or weekly work process in order to accommodate for these variances, and ultimately allow myself some extra time to work through tasks if that scenario were to arise again. This also helps prevent frustration I often face when a task does in fact take significantly longer than expected.',
           ],
         },
-      ],
+      ]),
     },
     {
       id: 7,
@@ -517,11 +517,11 @@ exports.seed = (knex) =>
       postType: 'Emotional',
       blurb:
         'A reflection of my journey through the core teachings of foundations',
-      tags: {
+      tags: JSON.stringify({
         new: false,
         depricated: false,
-      },
-      content: [
+      }),
+      content: JSON.stringify([
         {
           type: 'text',
           heading:
@@ -576,7 +576,7 @@ exports.seed = (knex) =>
             "Not at all. As stated, I felt I had a relatively decent grasp on many of the emphasised core skills before coming into this course. Because of this, I undoubtedly knew the benefits and importance of having these skills within the workplace. These skills were also something I had been developing throughout university, when working in groups with others who didn't necessarily have such a firm grasp on these skills, there was a clear impact on the flow of collaboration.",
           ],
         },
-      ],
+      ]),
     },
     {
       id: 8,
@@ -584,11 +584,11 @@ exports.seed = (knex) =>
       datePublished: '16/05/2021',
       postType: 'Emotional',
       blurb: 'A breakdown of how I handled learning while at EDA',
-      tags: {
+      tags: JSON.stringify({
         new: false,
         depricated: true,
-      },
-      content: [
+      }),
+      content: JSON.stringify([
         {
           type: 'text',
           heading: 'Pre-Bootcamp Learning Plan',
@@ -708,7 +708,7 @@ exports.seed = (knex) =>
             'I have no planned commitments that may clash with scheduling, however any unplanned activities that must be undertaken (such as bereavement or medical appointments) will be communicated on my part at the earliest I can. I would also expect support regarding catching up or structuring work around these commitments.',
           ],
         },
-      ],
+      ]),
     },
     {
       id: 9,
@@ -716,11 +716,11 @@ exports.seed = (knex) =>
       datePublished: '20/05/2021',
       postType: 'Mini-Project',
       blurb: 'A simple calculator',
-      tags: {
+      tags: JSON.stringify({
         new: false,
         depricated: true,
-      },
-      content: [],
+      }),
+      content: JSON.stringify([]),
     },
     {
       id: 10,
@@ -729,11 +729,11 @@ exports.seed = (knex) =>
       postType: 'Mini-Project',
       blurb:
         'A small art project that allows you to paint the colours of the rainbow',
-      tags: {
+      tags: JSON.stringify({
         new: false,
         depricated: true,
-      },
-      content: [],
+      }),
+      content: JSON.stringify([]),
     },
   ])
 
