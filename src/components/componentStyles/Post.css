@@ -31,11 +31,14 @@ h3, h4 {
 }
 
 .imageBlock {
-  
+  display: flex;
+  flex-direction: column;
 }
 
 .imageBlock, img {
-  
+  height: 100%;
+  width: auto;
+  margin: auto;
 }
 
 .imageBlock, p {
