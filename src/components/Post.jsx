@@ -1,6 +1,7 @@
 import './componentStyles/Post.css'
 import { Link, useParams } from 'react-router-dom'
 import { images } from '../Images/images.js'
+import { getPostsByID } from '../db/posts'
 
 const returnedPost = {
   id: 1,
@@ -108,6 +109,7 @@ export default function Post() {
 
   //database query based on parm ID
   // loading symbol until returned
+  //const returnedPost = getPostsByID(id)
 
   return (
     <div className="postWrapper">
