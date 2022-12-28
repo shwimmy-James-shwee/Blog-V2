@@ -107,6 +107,17 @@ const returnedPost = {
 export default function Post() {
   const { id } = useParams()
 
+  // async function getPost(id) {
+  //   try {
+  //     const post = await getPostsByID(parseInt(id))
+  //     return post
+  //   } catch (err) {
+  //     console.error(err)
+  //   }
+  // }
+
+  //const returnedPost = getPost(id)
+
   //database query based on parm ID
   // loading symbol until returned
   //const returnedPost = getPostsByID(id)
