@@ -124,113 +124,112 @@ export default function Post() {
     getPost(id)
   }, [id])
 
-  console.log(returnedPost)
-
   // add logic to wait (do a loading screen) until returnedPosts or another flag states the value has been retrieved
+  if (!returnedPost.id) {
+    return <div>LOADING..................................</div>
+  } else {
+    return (
+      <div className="postWrapper">
+        <div className="postTitle">
+          {/* conditionally display a depricated banner - need to JSON.parse the tags*/}
+          <h2>{returnedPost.name}</h2>
+        </div>
+        <div className="postContent">
+          {JSON.parse(returnedPost.content).map((contentBlock, index) => {
+            // loop over each piece of content in the returned post, and dynamically determine and display it in relevant HTMl tags
 
-  return (
-    <div>hello world</div>
+            // Could split below if else logic in to seperate components
+            if (contentBlock.type === 'text') {
+              const blockBody = contentBlock.body
+              const heading =
+                contentBlock.isSubHeading === false ? ( // determine which heading should be used
+                  <h3>{contentBlock.heading}</h3>
+                ) : (
+                  <h4>{contentBlock.heading}</h4>
+                )
 
-    // <div className="postWrapper">
-    //   <div className="postTitle">
-    //     {/* conditionally display a depricated banner */}
-    //     <h2>{returnedPost.name}</h2>
-    //   </div>
-    //   <div className="postContent">
-    //     {returnedPost.content.map((contentBlock, index) => {
-    //       // loop over each piece of content in the returned post, and dynamically determine and display it in relevant HTMl tags
+              return (
+                <div className="contentBlock textBlock" key={index}>
+                  {contentBlock.heading !== '' && // if a heading is populated, display it
+                    contentBlock.heading !== undefined &&
+                    heading}
 
-    //       // Could split below if else logic in to seperate components
-    //       if (contentBlock.type === 'text') {
-    //         const blockBody = contentBlock.body
-    //         const heading =
-    //           contentBlock.isSubHeading === false ? ( // determine which heading should be used
-    //             <h3>{contentBlock.heading}</h3>
-    //           ) : (
-    //             <h4>{contentBlock.heading}</h4>
-    //           )
+                  {blockBody &&
+                    blockBody.map((bodyItem, index) => {
+                      // if body items exist, loop and display them
+                      return (
+                        <p className="postBodyItem" key={index}>
+                          {bodyItem}
+                        </p>
+                      )
+                    })}
+                </div>
+              )
+            } else if (contentBlock.type === 'image') {
+              const src = images[contentBlock.ref]
 
-    //         return (
-    //           <div className="contentBlock textBlock" key={index}>
-    //             {contentBlock.heading !== '' && // if a heading is populated, display it
-    //               contentBlock.heading !== undefined &&
-    //               heading}
+              const annotation = contentBlock.annotation
+              return (
+                <div className="contentBlock imageBlock" key={index}>
+                  <img src={src} alt="" />
+                  {annotation !== '' && annotation !== undefined && (
+                    <em>{annotation}</em> // if an annotation is populated, display it
+                  )}
+                </div>
+              )
+            } else if (contentBlock.type === 'iFrame') {
+              const src = contentBlock.src
+              const annotation = contentBlock.annotation
 
-    //             {blockBody &&
-    //               blockBody.map((bodyItem, index) => {
-    //                 // if body items exist, loop and display them
-    //                 return (
-    //                   <p className="postBodyItem" key={index}>
-    //                     {bodyItem}
-    //                   </p>
-    //                 )
-    //               })}
-    //           </div>
-    //         )
-    //       } else if (contentBlock.type === 'image') {
-    //         const src = images[contentBlock.ref]
+              return (
+                <div className="contentBlock iFrameBlock" key={index}>
+                  <iframe src={src} title={index}></iframe>
 
-    //         const annotation = contentBlock.annotation
-    //         return (
-    //           <div className="contentBlock imageBlock" key={index}>
-    //             <img src={src} alt="" />
-    //             {annotation !== '' && annotation !== undefined && (
-    //               <em>{annotation}</em> // if an annotation is populated, display it
-    //             )}
-    //           </div>
-    //         )
-    //       } else if (contentBlock.type === 'iFrame') {
-    //         const src = contentBlock.src
-    //         const annotation = contentBlock.annotation
+                  {annotation !== '' && annotation !== undefined && (
+                    <em>{annotation}</em> // if an annotation is populated, display it
+                  )}
+                </div>
+              )
+            } else if (contentBlock.type === 'orderedList') {
+              const preText = contentBlock.preText
+              const listItems = contentBlock.items
 
-    //         return (
-    //           <div className="contentBlock iFrameBlock" key={index}>
-    //             <iframe src={src} title={index}></iframe>
+              return (
+                <div className="contentBlock oListBlock" key={index}>
+                  {
+                    preText !== '' && preText !== undefined && <p>{preText}</p> // if pretext is found, display it
+                  }
 
-    //             {annotation !== '' && annotation !== undefined && (
-    //               <em>{annotation}</em> // if an annotation is populated, display it
-    //             )}
-    //           </div>
-    //         )
-    //       } else if (contentBlock.type === 'orderedList') {
-    //         const preText = contentBlock.preText
-    //         const listItems = contentBlock.items
+                  <ol>
+                    {listItems &&
+                      listItems.map((item, liIndex) => {
+                        return <li key={liIndex}>{item}</li> // loop over list items if provided and display them
+                      })}
+                  </ol>
+                </div>
+              )
+            } else if (contentBlock.type === 'unOrderedList') {
+              const preText = contentBlock.preText
+              const listItems = contentBlock.items
 
-    //         return (
-    //           <div className="contentBlock oListBlock" key={index}>
-    //             {
-    //               preText !== '' && preText !== undefined && <p>{preText}</p> // if pretext is found, display it
-    //             }
+              return (
+                <div className="contentBlock uListBlock" key={index}>
+                  {
+                    preText !== '' && preText !== undefined && <p>{preText}</p> // if pre text is found, display it
+                  }
 
-    //             <ol>
-    //               {listItems &&
-    //                 listItems.map((item, liIndex) => {
-    //                   return <li key={liIndex}>{item}</li> // loop over list items if provided and display them
-    //                 })}
-    //             </ol>
-    //           </div>
-    //         )
-    //       } else if (contentBlock.type === 'unOrderedList') {
-    //         const preText = contentBlock.preText
-    //         const listItems = contentBlock.items
-
-    //         return (
-    //           <div className="contentBlock uListBlock" key={index}>
-    //             {
-    //               preText !== '' && preText !== undefined && <p>{preText}</p> // if pre text is found, display it
-    //             }
-
-    //             <ul>
-    //               {listItems &&
-    //                 listItems.map((item, liIndex) => {
-    //                   return <li key={liIndex}>{item}</li> // loop over and display list items
-    //                 })}
-    //             </ul>
-    //           </div>
-    //         )
-    //       }
-    //     })}
-    //   </div>
-    // </div>
-  )
+                  <ul>
+                    {listItems &&
+                      listItems.map((item, liIndex) => {
+                        return <li key={liIndex}>{item}</li> // loop over and display list items
+                      })}
+                  </ul>
+                </div>
+              )
+            }
+          })}
+        </div>
+      </div>
+    )
+  }
 }
