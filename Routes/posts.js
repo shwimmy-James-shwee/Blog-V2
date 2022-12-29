@@ -4,12 +4,11 @@ const db = require('../db/posts')
 
 const router = express.Router()
 
-router.get('/:id', (req, res) => {
+router.get('/post/:id', (req, res) => {
   const id = req.params.id
   db.getPostsByID(id)
     .then((post) => {
-      console.log('server tried to get post, the ID was: ' + id)
-      //console.log(post)
+      //console.log('server tried to get post, the ID was: ' + id)
       res.json(post)
       return null
     })
@@ -20,7 +19,6 @@ router.get('/:id', (req, res) => {
 })
 
 router.get('/allPosts', (req, res) => {
-  //const id = req.body.id
   db.getAllPosts()
     .then((posts) => {
       res.json(posts)

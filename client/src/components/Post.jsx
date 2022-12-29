@@ -110,9 +110,9 @@ export default function Post() {
   const [returnedPost, setPost] = useState({}) // capture the retrieved post in state
 
   useEffect(() => {
-    function getPost(id) {
+    async function getPost(id) {
       try {
-        fetch(`/api/post/${id}`) // call ExpressJS server side end point to access db
+        await fetch(`/api/post/${id}`) // call ExpressJS server side end point to access db
           .then((res) => res.json())
           .then((post) => {
             setPost(post[0]) // response is wrapped in array, take first

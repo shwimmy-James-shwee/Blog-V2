@@ -11,7 +11,7 @@ server.use(express.static(path.join(__dirname, 'client'))) // use for dev?
 
 //server.use(express.json())
 
-server.use('/api/post', postRoutes)
+server.use('/api', postRoutes)
 
 module.exports = server
 
