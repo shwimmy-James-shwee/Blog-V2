@@ -22,7 +22,10 @@ INSTRUCTIONS:
 
 
 
+
 TO DO:
+- make express to db calls async? - https://youtu.be/qwM23_kF4v4?t=2003
+
 - update logic for the home page carrousel and list to access posts from the db 
 - add dynamic banners to displayed posts to display and explain depricated posts
 - implement a loading symbol for when accessing the db
