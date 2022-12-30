@@ -30,6 +30,7 @@ function App() {
       <Route path="/post/:id">
         <Post />
       </Route>
+      <Route path="*"></Route>
     </div>
   )
 }

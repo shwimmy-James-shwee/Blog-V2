@@ -1,6 +1,7 @@
 .App {
   color: var(--text-primary);
   background-color: var(--background);
+  background-image: var(--background-image);
   font-size: large;
   font-weight: bold;
   /* padding: 20px; */
