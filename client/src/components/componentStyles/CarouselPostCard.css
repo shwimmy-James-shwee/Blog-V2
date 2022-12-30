@@ -26,15 +26,15 @@ background: var(--background-contrast-hover);
 }
 
 [post-type='Emotional'] {
-  --border-type-color: green;
+  --border-type-color: rgba(0, 128, 0, .3);
 }
 
 [post-type='Technical'] {
-  --border-type-color: orange;
+  --border-type-color: rgba(255, 165, 0, .3);
 }
 
 [post-type='Mini-Project'] {
-  --border-type-color: red;
+  --border-type-color: rgba(255, 0, 0, .3);
 }
 
 .Carousel-Card-Date {

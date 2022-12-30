@@ -19,10 +19,10 @@ export default function CarouselPostCard({ post }) {
       <div className="Carousel-Card-Blurb">{post.blurb}</div>
 
       <div className="Carousel-Card-Footer">
-        {post.tags.new === true && (
+        {JSON.parse(post.tags).new === true && (
           <div className="Carousel-Card-Tag new">New</div>
         )}
-        {post.tags.depricated === true && (
+        {JSON.parse(post.tags).depricated === true && (
           <div className="Carousel-Card-Tag depricated">Depricated</div>
         )}
       </div>

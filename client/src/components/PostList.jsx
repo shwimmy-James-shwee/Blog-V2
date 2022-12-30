@@ -66,8 +66,8 @@ export default function PostList({ postArr }) {
     const id = post.id.toString()
     const date = post.datePublished
     const postType = post.postType
-    const postNew = post.tags.new
-    const postDepricated = post.tags.depricated
+    const postNew = JSON.parse(post.tags).new
+    const postDepricated = JSON.parse(post.tags).depricated
 
     const queryStr = selection.searchQuery.toLowerCase()
     const typeFilter = selection.postTypeSelection

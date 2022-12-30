@@ -1,10 +1,12 @@
 import './componentStyles/Home.css'
 import Carousel from './Carousel.jsx'
 import PostList from './PostList.jsx'
+import Loading from './Loading'
 import { useState, useEffect } from 'react'
 
 export default function Home() {
   const [allPosts, setAllPosts] = useState([]) // capture the retrieved posts in state
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     async function getAllPosts() {
@@ -19,7 +21,14 @@ export default function Home() {
       }
     }
     getAllPosts()
+
+    setTimeout(() => {
+      // just so you get to see the cool loading screen :)
+      setIsLoading(false)
+    }, 500)
   }, [])
+
+  if (isLoading) return <Loading />
 
   return (
     <>

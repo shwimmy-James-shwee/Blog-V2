@@ -1,0 +1,22 @@
+.loading {
+  background-color: var(--background);
+  width: 100%;
+  height: calc(100vh - 50px); 
+  overflow: hidden;  
+  display: flex;
+  align-items: center;
+  justify-content: center;}
+
+.loadingSymbol {
+  height: 200px;
+  width: 200px;
+}
+
+.loadingSymbol img {
+  width: 100%;
+  height: 100%;
+}
+
+.loadingSymbol h2 {
+  text-align: center;
+}
