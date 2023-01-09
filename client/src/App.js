@@ -28,8 +28,14 @@ function App() {
   const videoRef = useRef(null)
 
   function restartVid() {
-    videoRef.current.currentTime = videoRef.current.duration
-    videoRef.current.playbackRate = -1
+    console.log('attempted restart')
+    //videoRef.current.currentTime = videoRef.current.duration
+
+    //if rate swap rate between forward and reveresed
+    videoRef.current.playbackRate === 1
+      ? (videoRef.current.playbackRate = -1)
+      : (videoRef.current.playbackRate = 1)
+    //videoRef.current.playbackRate = -1
     videoRef.current.play()
   }
   // function restartVid(e) {
@@ -46,7 +52,6 @@ function App() {
           id="video"
           className="backgroundVideo"
           autoPlay
-          loop
           muted
           ref={videoRef}
           onEnded={(e) => restartVid(e)}
@@ -59,7 +64,6 @@ function App() {
           id="video"
           className="backgroundVideo"
           autoPlay
-          loop
           muted
           ref={videoRef}
           onEnded={(e) => restartVid(e)}
