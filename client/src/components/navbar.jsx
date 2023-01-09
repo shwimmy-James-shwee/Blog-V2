@@ -24,7 +24,11 @@ function Navbar({ changeTheme, datatheme }) {
             <i className="sun">🌞</i>
 
             {datatheme === 'dark' && (
-              <input type="checkbox" onClick={changeTheme} checked></input>
+              <input
+                type="checkbox"
+                onClick={changeTheme}
+                defaultChecked
+              ></input>
             )}
             {datatheme === 'light' && (
               <input type="checkbox" onClick={changeTheme} />

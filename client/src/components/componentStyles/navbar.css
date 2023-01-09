@@ -6,6 +6,8 @@
   color: var(--text-primary);
   -webkit-box-shadow: 1px 5px 10px 0px #000000; 
   box-shadow: 0px 0px 10px 0px #000000;
+  position:relative;
+  z-index: 2;
 }
 
 .nav-wrapper {
@@ -13,6 +15,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  /* z-index: 1; */
 
 }
 

@@ -26,7 +26,8 @@ INSTRUCTIONS:
 TO DO:
 - ~~update logic for the home page carrousel and list to access posts from the db~~
 - ~~add dynamic banners to displayed posts to display and explain depricated posts~~
-- implement a loading symbol for when accessing the db
+- ~~implement a loading symbol for when accessing the db~~
+- implement motion background to pages
 - add link to my Github on the navbar
 - add 404 page
 - move DB setup scripts to the root package.json - file structure refactor task

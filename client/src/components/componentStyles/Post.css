@@ -6,6 +6,8 @@
   margin: auto;
   margin-top: 30px;
   padding-bottom: 20px;
+  position:relative;
+  z-index: 1;
 }
 
 .postTitle {
@@ -25,13 +27,13 @@
   margin-right: 5%;
 }
 
-.contentBlock {
+/* .contentBlock {
 
 }
 
 .textBlock {
 
-}
+} */
 
 h3, h4 {
   margin-left: 1%;
