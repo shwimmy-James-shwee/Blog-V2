@@ -24,6 +24,7 @@
   background-color: var(--background-secondary);
   font-size: larger;
   text-decoration: none;
+  width: 200px;
 }
 
 .nav-button {
@@ -44,6 +45,12 @@
   height: 100%;
   display: flex;
   justify-content:center;
+}
+
+.nav-theme-wrapper {
+  width: 200px;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .nav-theme {

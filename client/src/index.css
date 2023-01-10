@@ -34,7 +34,7 @@ code {
 
 
 :root {
-  --background-image: url('./Images/background-light.mp4');
+  /* --background-image: url('./Images/background-light.mp4'); */
 
   --background: rgb(241, 241, 241);
   --background-hover: rgba(205, 205, 205, .5);
@@ -57,7 +57,7 @@ code {
 }
 
 [datatheme='dark'] {
-  --background-image: url('./Images/background-dark.mp4');
+  /* --background-image: url('./Images/background-dark.mp4'); */
 
   --background: rgb(24, 25, 26);
   --background-hover: rgba(24, 25, 26, .5);

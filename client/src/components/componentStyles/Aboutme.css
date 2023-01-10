@@ -4,6 +4,10 @@
   width: 80%;
   min-height: 90vh;
   background-color: var(--background-secondary);
+  position: relative;
+  z-index: 1;
+  -webkit-box-shadow: 3px 6px 10px -3px #000000; 
+  box-shadow: 3px 6px 10px -3px #000000;
 }
 
 .aboutMeNav {

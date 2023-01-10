@@ -14,10 +14,10 @@ INSTRUCTIONS:
 3. navigate back to root ("cd ..")
 4. "npm install"
 5. "npm run knex" - this creates and seeds our DB with initial data
-6. open two seperate consoles (weird I know... Don't use Create-React-App if your project requires a bunch of other packages)
+6. open two seperate consoles (one for the server, one for clientside)
 7. in one console, at the root, run "npm start" (this starts our Express JS server on the 'server')
 8. in the other console, "cd client", run "npm start" (this starts our react app on a seperate port, linked via a proxy)
-9. the Express JS server sits on localhost:5000 and is very bare bones (not for human eyes!), our react app sits on localhost:3000
+9. the Express JS server sits on localhost:5000 and is bare bones (not for human eyes!), our react app sits on localhost:3000, the server should be started before the react app
 
 
 
@@ -28,8 +28,8 @@ TO DO:
 - ~~add dynamic banners to displayed posts to display and explain depricated posts~~
 - ~~implement a loading symbol for when accessing the db~~
 - implement motion background to pages
-- add link to my Github on the navbar
-- add 404 page
+- ~~add link to my Github and linkedin on the navbar~~
+- ~~add 404 page~~
 - move DB setup scripts to the root package.json - file structure refactor task
 - add in the custom 'mini-projects' and link them to their posts
 
@@ -45,5 +45,9 @@ TO DO:
 BUGS:
 - dynamic image rendering as part of the universal post rendering framework no longer works, this was caused by the file structure refactor to accomodate ExpressJS
 - The home page carrousel does not appropriately resize its cards based on the users window size, this results in some of the cards being cut off
-- NavBar items are off centre
+- ~~NavBar items are off centre~~
 - rows in the post list become out of line on smaller browsers
+- ~~background video overlaps About page~~
+- background video appears low res
+- background video does not cover whole screen on smaller displays
+

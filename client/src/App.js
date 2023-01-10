@@ -1,11 +1,12 @@
-import useLocalStorage from 'use-local-storage'
 import Navbar from './components/navbar'
 import Home from './components/Home'
 import Aboutme from './components/Aboutme'
 import Post from './components/Post'
+import PageNotFound from './components/PageNotFound'
 import './App.css'
-import { Route } from 'react-router-dom'
-import { useEffect, useRef, useState } from 'react'
+import useLocalStorage from 'use-local-storage'
+import { Route, Switch } from 'react-router-dom'
+import { useState } from 'react'
 import backgroundLight from './Images/background-light.mp4'
 import backgroundDark from './Images/background-dark.mp4'
 
@@ -16,7 +17,7 @@ function App() {
     defaultDark ? 'dark' : 'light'
   ) // capture in localStorage to remember users previous chioce
 
-  //also capture in state so we can re-render the page with the new background video
+  //also capture theme in state so we can re-render the page with the new background video
   const [stateTheme, setStateTheme] = useState(theme)
 
   const changeTheme = () => {
@@ -25,65 +26,36 @@ function App() {
     setStateTheme(newTheme)
   }
 
-  const videoRef = useRef(null)
-
-  function restartVid() {
-    console.log('attempted restart')
-    //videoRef.current.currentTime = videoRef.current.duration
-
-    //if rate swap rate between forward and reveresed
-    videoRef.current.playbackRate === 1
-      ? (videoRef.current.playbackRate = -1)
-      : (videoRef.current.playbackRate = 1)
-    //videoRef.current.playbackRate = -1
-    videoRef.current.play()
-  }
-  // function restartVid(e) {
-  //   console.log('video has ended')
-  //   //if the video playbackrate is 1, set it to -1
-  //   // else if the video playbackrate is -1, set it to 1
-  //   //play video
-  // }
-
   return (
     <>
       {stateTheme === 'light' && (
-        <video
-          id="video"
-          className="backgroundVideo"
-          autoPlay
-          muted
-          ref={videoRef}
-          onEnded={(e) => restartVid(e)}
-        >
+        <video id="video" className="backgroundVideo" autoPlay muted loop>
           <source src={backgroundLight} />
         </video>
       )}
       {stateTheme === 'dark' && (
-        <video
-          id="video"
-          className="backgroundVideo"
-          autoPlay
-          muted
-          ref={videoRef}
-          onEnded={(e) => restartVid(e)}
-        >
+        <video id="video" className="backgroundVideo" autoPlay muted loop>
           <source src={backgroundDark} />
         </video>
       )}
 
       <div className="App" datatheme={theme}>
         <Navbar changeTheme={changeTheme} datatheme={theme} />
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/about/:id">
-          <Aboutme />
-        </Route>
-        <Route path="/post/:id">
-          <Post />
-        </Route>
-        <Route path="*"></Route>
+
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about/:id">
+            <Aboutme />
+          </Route>
+          <Route path="/post/:id">
+            <Post />
+          </Route>
+          <Route path="*">
+            <PageNotFound />
+          </Route>
+        </Switch>
       </div>
     </>
   )

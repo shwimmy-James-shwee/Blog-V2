@@ -14,11 +14,24 @@ function Navbar({ changeTheme, datatheme }) {
           <NavLink to="/about/me" className="nav-button">
             About
           </NavLink>
-          <NavLink to="/test" className="nav-button">
+          <a
+            href="https://github.com/shwimmy-James-shwee"
+            className="nav-button"
+            target="_blank"
+            rel="noreferrer"
+          >
             GitHub
-          </NavLink>
+          </a>
+          <a
+            className="nav-button"
+            href="https://www.linkedin.com/in/james-pearce-59b18844/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
         </div>
-        <div>
+        <div className="nav-theme-wrapper">
           <label className="nav-theme">
             <i className="moon">🌜</i>
             <i className="sun">🌞</i>

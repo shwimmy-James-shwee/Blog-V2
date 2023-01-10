@@ -10,11 +10,12 @@
 }
 
 .backgroundVideo {
-  height: 100%;
-  width: auto;
-  float: left;
-  top: 0;
-  padding: none;
+  height: auto;
+  width: 100%;
+  /* min-height: 100vh; */
+  /* float: left; */
+  /* top: 0; */
+  /* padding: none; */
   position: fixed;
   z-index: 0;
 }
