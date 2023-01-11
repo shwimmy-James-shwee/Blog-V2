@@ -24,11 +24,12 @@ INSTRUCTIONS:
 2. "npm install"
 3. navigate back to root ("cd ..")
 4. "npm install"
-5. "npm run knex" - this creates and seeds our DB with initial data
-6. open two seperate consoles (one for the server, one for clientside)
-7. in one console, at the root, run "npm start" (this starts our Express JS server on the 'server')
-8. in the other console, "cd client", run "npm start" (this starts our react app on a seperate port, linked via a proxy)
-9. the Express JS server sits on localhost:5000 and is bare bones (not for human eyes!), our react app sits on localhost:3000, the server should be started before the react app
+5. "npm run knex migrate:latest" - this creates our db 'Posts' tables
+6. "npm run knex seed:run" - this loads our Posts table with data
+7. open two seperate consoles (one for the server, one for clientside)
+8. in one console, at the root, run "npm start" (this starts our Express JS server on the 'server')
+9. in the other console, "cd client", run "npm start" (this starts our react app on a seperate port, linked via a proxy)
+10. the Express JS server sits on localhost:5000 and is bare bones (not for human eyes!), our react app sits on localhost:3000, the server should be started before the react app
 
 
 

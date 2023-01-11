@@ -6,11 +6,18 @@
   "author": "James Pearce",
   "scripts": {
     "start": "node index.js",
-    "start-react": "cd client && npm start"
+    "start-react": "cd client && npm start",
+    "knex": "knex --knexfile ./db/knexfile.js"
   },
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "knex": "^0.21.13",
+    "mssql": "^6.4.1",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.2"
   }
 }
