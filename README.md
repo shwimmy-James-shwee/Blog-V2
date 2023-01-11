@@ -41,7 +41,7 @@ TO DO:
 - ~~implement motion background to pages~~
 - ~~add link to my Github and linkedin on the navbar~~
 - ~~add 404 page~~
-- move DB setup scripts to the root package.json - file structure refactor task
+- ~~move DB setup scripts to the root package.json - file structure refactor task~~
 - ~~add in the custom 'mini-projects' and link them to their posts~~
 
 - create page for adding new posts to the DB (requires restricting access to admins)
@@ -60,7 +60,7 @@ BUGS:
 - ~~background video overlaps About page~~
 - ~~background video does not cover whole screen on smaller displays~~
 - The home page carrousel does not appropriately resize its cards based on the users window size, this results in some of the cards being cut off
-- rows in the post list become out of line on smaller displays
+- ~~rows in the post list become out of line on smaller displays~~ (partial fix in place)
 - background video appears low res
 
 

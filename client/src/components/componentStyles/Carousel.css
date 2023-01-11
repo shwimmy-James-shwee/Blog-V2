@@ -1,6 +1,7 @@
 .Carousel-wrapper {
   height: 200px;
   width: 100%;
+  min-width: 1280px;
   margin-top: 50px;
   display: flex;
   align-items: center;

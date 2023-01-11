@@ -125,7 +125,7 @@ export default function PostList({ postArr }) {
             <input
               type="search"
               id="searchQuery"
-              placeholder="Enter a query"
+              placeholder=" Enter a query"
               onChange={(e) =>
                 setSelection({ ...selection, searchQuery: e.target.value })
               }

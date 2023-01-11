@@ -63,7 +63,8 @@ code {
   --background-hover: rgba(24, 25, 26, .5);
 
   --background-secondary: rgb(36, 37, 38);
-  --background-secondary-hover: rgba(36, 37, 38, .5);
+  /* --background-secondary-hover: rgba(36, 37, 38, .5); */
+  --background-secondary-hover: rgba(24, 25, 26, .5);
 
   --background-contrast: rgb(194, 194, 194);
   --background-contrast-hover: rgb(210, 210, 210);

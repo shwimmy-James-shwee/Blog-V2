@@ -9,6 +9,7 @@
 
 .listBody {
   width: 80%;
+  min-width: 1100px;
   /* height: 90%; */
   height: auto;
   max-height: 90%;
@@ -63,7 +64,8 @@
 
 .FilterSelector > input {
   width: 125px;
-  height: 25px;
+  height: 30px;
+  margin-left: 5px;
   color: var(--text-primary);
   background-color: var(--background-secondary);
   border: 1px solid var(--button-primary);
@@ -92,17 +94,24 @@
 }
 
 .postRow > h4 {
-  margin-top: 13px;
+  /* margin-top: 13px; */
+  align-self: center;
+  min-width: 300px;
 }
 
 .postRow > p {
+  padding-left: 5px;
   font-size: small;
+  /* min-width: 500px; */
 }
 
 .postRowID {
+  position: relative;
   text-align: center;
   width: 30px;
+  min-width: 30px;
   height: 25px;
+  min-height: 25px;
   align-self: center;
   justify-self: center;
   background-color: var(--border-type-color);

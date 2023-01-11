@@ -1,6 +1,6 @@
 .Carousel-Item {
   min-width: 18%;
-  max-width: 18%; /* need to refactor how width is determined to be responsive */
+  max-width: 18%; 
   height: 80%;
   margin: .49rem;
   /* margin-left: .49rem; */
