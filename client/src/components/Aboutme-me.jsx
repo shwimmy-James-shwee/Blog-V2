@@ -1,5 +1,5 @@
 import './componentStyles/Aboutme-me.css'
-const jamesPhoto = require('../Images/james-photo-india.jpg')
+import jamesPhoto from '../Images/james-photo-india.jpg'
 
 export default function AboutJames() {
   const dateString = '07/21/1998'
@@ -27,9 +27,9 @@ export default function AboutJames() {
           2020 i completed a conjoint degree in marketing and information
           systems (with more passion for the information systems side) yet
           struggled to find any work relating to my study. From there I
-          undertook Enspiral Dev Acadamy's course in web development to upskill
-          and get my foot in the door. Initially I planned to use these web
-          development skills to support my knowledge in information systems,
+          undertook Enspiral Dev Acadamy's bootcamp in web development to
+          upskill and get my foot in the door. Initially I planned to use these
+          web development skills to support my knowledge in information systems,
           however as i worked through the course, and through my career so far,
           I've realised I want the exact opposite; to focus on web development
           and to supliment that journey with the knowledge gained from my

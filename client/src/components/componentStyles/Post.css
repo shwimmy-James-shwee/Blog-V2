@@ -52,7 +52,7 @@ h3, h4 {
   flex-direction: column;
 }
 
-.imageBlock, img {
+.imageBlock img {
   height: 100%;
   width: auto;
   margin: auto;

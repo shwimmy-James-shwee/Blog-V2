@@ -9,14 +9,17 @@
   /* z-index: 1; */
 }
 
-.backgroundVideo {
-  height: auto;
-  width: 100%;
-  /* min-height: 100vh; */
-  /* float: left; */
-  /* top: 0; */
-  /* padding: none; */
+.background-wrapper { 
+  width: 100vw;
+  height: 100vh;
   position: fixed;
+  z-index: 0;
+}
+
+.backgroundVideo {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
   z-index: 0;
 }
 
