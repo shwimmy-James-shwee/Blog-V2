@@ -41,7 +41,7 @@ TO DO:
 - ~~add link to my Github and linkedin on the navbar~~
 - ~~add 404 page~~
 - move DB setup scripts to the root package.json - file structure refactor task
-- add in the custom 'mini-projects' and link them to their posts
+- ~~add in the custom 'mini-projects' and link them to their posts~~
 
 - create page for adding new posts to the DB (requires restricting access to admins)
 - create similar page for editing existing posts (requires restricting access to admins)

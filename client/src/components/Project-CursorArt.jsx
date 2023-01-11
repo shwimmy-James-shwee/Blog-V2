@@ -4,12 +4,12 @@ function CursorArtProject() {
   var mouse = false
 
   onmousemove = function (e) {
-    var mouseX = e.clientX - 10
-    var mouseY = e.clientY - 25
+    var mouseX = e.clientX
+    var mouseY = e.clientY - 65 // off sets for banner
 
-    if (mouse == true) {
-      var interval = setInterval(paint(mouseX, mouseY), 1) // if the mouse is held down then every 10 ms call paint with the mouse coordinates, otherwise cancel the interval
-    } else if (mouse == false) {
+    if (mouse === true) {
+      var interval = setInterval(paint(mouseX, mouseY), 500) // if the mouse is held down then every 500 ms call paint with the mouse coordinates, otherwise cancel the interval
+    } else if (mouse === false) {
       clearInterval(interval)
     }
   }
@@ -22,18 +22,19 @@ function CursorArtProject() {
     mouse = false
   }
 
-  // document.onkeyup = function (e) {
-  //   if (e.code == 'Space') {
-  //     location.reload()
-  //   }
-  // }
+  document.onkeyup = function (e) {
+    if (e.code === 'Space') {
+      var canvasElement = document.getElementById('canvas')
+      canvasElement.innerHTML = ''
+    }
+  }
 
   // creates a p element (no text) and sets its shape as a circle, then sets its position to the mouse coordinates
   var circleNum = 1
   function paint(mouseX, mouseY) {
     var element = document.createElement('p')
-    var elementParent = document.getElementById('canvas')
-    elementParent.appendChild(element).setAttribute('id', circleNum)
+    var canvasElement = document.getElementById('canvas')
+    canvasElement.appendChild(element).setAttribute('id', circleNum)
 
     var elementNum = document.getElementById(circleNum)
     elementNum.classList.add('circle')
@@ -45,7 +46,7 @@ function CursorArtProject() {
   }
 
   return (
-    <>
+    <div className="canvasWrapper">
       <div className="depricatedBanner-project">
         <h4>This post is depricated</h4>
         <p>
@@ -60,19 +61,18 @@ function CursorArtProject() {
           additional post
         </em>
       </div>
-      <div className="canvasWrapper">
-        <h4 className="center-text">
-          Click to paint the colours of the rainbow, use spacebar to reset the
-          canvas
-        </h4>
-        <p className="center-text">
-          Due to the way i coded this, moving the mouse too fast will create
-          gaps in the trail. Too much drawing may also slow the browser.
-        </p>
 
-        <div id="canvas"></div>
-      </div>
-    </>
+      <h4 className="center-text">
+        Click to paint the colours of the rainbow, use spacebar to reset the
+        canvas
+      </h4>
+      <p className="center-text">
+        Due to the way i coded this, moving the mouse too fast will create gaps
+        in the trail. Too much drawing may also slow the browser.
+      </p>
+
+      <div id="canvas"></div>
+    </div>
   )
 }
 
