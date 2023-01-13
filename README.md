@@ -1,6 +1,6 @@
 NOTES:
 - this project is intended to represent my thought process in resolving problems and development. You'll find a lot of comments throughout the code.
-  - (note I am a one man army for this project, with my aim to avoid overusing external resources for this project some of the code may be slightly unorthadox, however is a truer representation of may brains approach to development)
+  - (note I am a one man army for this project, with my aim to avoid overusing external resources for this project some of the code may be slightly unorthadox, however is a truer representation of my approach to development)
 - as this project is meant to be a pure display of my natural ability (as of 2022), the vast majority of it is written straight from my brain, with support of documentation where needed, and with very little use of 'tutorials' or sources in which large amounts of code are provided. Each area where I have seeked a more significant level of help/guidance is listed below:
   - The home page carrousal leveraged a tutorial for the CSS elements of the annimation
   - the custom drop down box on the post list used reference code and pseudo code (although in retrospect I would rather edit the native drop down functionality)
@@ -62,5 +62,6 @@ BUGS:
 - The home page carrousel does not appropriately resize its cards based on the users window size, this results in some of the cards being cut off
 - ~~rows in the post list become out of line on smaller displays~~ (partial fix in place)
 - background video appears low res
+- post list filter drop downs stay open when not targeted 
 
 
